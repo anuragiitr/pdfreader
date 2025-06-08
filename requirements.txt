@@ -3,3 +3,9 @@ langchain
 pdfplumber
 tqdm
 python-dotenv
+tiktoken
+sentence-transformers
+faiss-cpu
+ollama
+langchain-community
+
