@@ -1,0 +1,5 @@
+openai
+langchain
+pdfplumber
+tqdm
+python-dotenv
