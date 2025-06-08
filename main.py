@@ -1,18 +1,19 @@
 from dotenv import load_dotenv
 load_dotenv()
 
-
-import pdfplumber
-
-def extract_text_from_pdf(pdf_path):
-    all_text = ""
-    with pdfplumber.open(pdf_path) as pdf:
-        for page in pdf.pages:
-            all_text += page.extract_text() + "\n"
-    return all_text
+from utils.pdf_utils import extract_text_from_pdf
+from qa_agent import create_qa_chain_from_text
 
 if __name__ == "__main__":
-    pdf_file = "sample.pdf"  # Put a sample PDF file in your folder
+    pdf_file = "sample.pdf"
     text = extract_text_from_pdf(pdf_file)
-    print("Extracted Text:")
-    print(text)
+    
+    qa_chain = create_qa_chain_from_text(text)
+
+    while True:
+        query = input("\nAsk a question about the PDF (or type 'exit'): ")
+        if query.lower() == "exit":
+            break
+        answer = qa_chain.run(query)
+        print("Answer:", answer)
+
