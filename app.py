@@ -1,5 +1,5 @@
 import streamlit as st
-from pdf_extractor import extract_text_from_pdf
+from utils.pdf_utils import extract_text_from_pdf
 from qa_agent import create_qa_chain_from_text
 
 st.set_page_config(page_title="PDF Q&A App", layout="wide")
