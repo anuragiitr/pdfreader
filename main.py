@@ -1,5 +1,5 @@
-from dotenv import load_dotenv
-load_dotenv()
+# from dotenv import load_dotenv
+# load_dotenv()
 
 from utils.pdf_utils import extract_text_from_pdf
 from qa_agent import create_qa_chain_from_text
@@ -16,3 +16,4 @@ if __name__ == "__main__":
             break
         answer = qa_chain.run(query)
         print("Answer:", answer)
+
