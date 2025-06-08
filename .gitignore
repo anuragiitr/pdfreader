@@ -1,0 +1,20 @@
+# MacOS system files
+.DS_Store
+
+# Python virtual environment folder
+venv/
+
+# Temporary Microsoft Word files
+~$*.docx
+
+# Python cache and bytecode files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Logs
+*.log
+
+# Environment variable files (if any)
+.env
